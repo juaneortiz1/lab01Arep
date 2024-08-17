@@ -44,11 +44,42 @@ class ClientHandler implements Runnable {
 
             if (method.equals("GET")) {
                 handleGetRequest(fileRequested, out, dataOut);
+            } else if (method.equals("POST")) {
+                handlePostRequest(fileRequested, in, out);
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void handlePostRequest(String fileRequested, BufferedReader in, PrintWriter out) throws IOException {
+        StringBuilder payload = new StringBuilder();
+        String line;
+
+
+        while (!(line = in.readLine()).isEmpty()) {
+        }
+
+
+        while (in.ready() && (line = in.readLine()) != null) {
+            payload.append(line);
+        }
+
+        String body = payload.toString();
+
+
+        String fileName = "received_data.txt";
+        try (FileWriter fileWriter = new FileWriter(new File(SimpleWebServer.WEB_ROOT, fileName))) {
+            fileWriter.write(body);
+        }
+
+
+        out.println("HTTP/1.1 200 OK");
+        out.println("Content-Type: text/plain");
+        out.println();
+        out.println("File created: " + fileName);
+        out.flush();
     }
 
     private void handleGetRequest(String fileRequested, PrintWriter out, BufferedOutputStream dataOut) throws IOException {
