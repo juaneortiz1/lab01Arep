@@ -45,33 +45,27 @@ SimpleConcurrentWebServer/
      ```bash
      java -version
      ```
-
-2. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/your-repo/SimpleConcurrentWebServer.git
-   cd SimpleConcurrentWebServer
-   ```
-
-3. **Compile the Source Code**:
+     
+2. **Compile the Source Code**:
    - Compile the Java source files using the `javac` command:
      ```bash
      javac -d bin src/main/java/edu/escuelaing/arep/ASE/app/SimpleWebServer.java
      ```
 
-4. **Run the Web Server**:
+3. **Run the Web Server**:
    - After compiling, start the web server by running:
      ```bash
      java -cp bin edu.escuelaing.arep.ASE.app.SimpleWebServer
      ```
 
-5. **Access the Web Server**:
+4. **Access the Web Server**:
    - Open your web browser and navigate to:
      ```
      http://localhost:8080
      ```
    - The server will serve files located in the `src/main/resources/` directory.
 
-6. **Stop the Server**:
+5. **Stop the Server**:
    - To stop the server, press `Ctrl + C` in the terminal where the server is running.
 
 ## Configuration
