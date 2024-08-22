@@ -37,7 +37,7 @@ SimpleConcurrentWebServer/
 │                           └───app/
 ```
 
-```markdown
+
 ## How to Run
 
 1. **Ensure You Have Java Installed**:
